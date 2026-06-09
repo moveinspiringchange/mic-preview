@@ -50,7 +50,13 @@ window.MIC_DATA = {
         "High-Protein",
         "Meal Prep"
       ],
-      "macros": null,
+      "macros": {
+        "cal": 320,
+        "protein": 12,
+        "carbs": 30,
+        "fat": 16,
+        "est": true
+      },
       "image": "assets/img/recipe-pronola-protein-granola.jpg",
       "blurb": "Crunchy homemade protein granola \u2014 make a batch and breakfast is sorted for the week.",
       "ingredients": [
@@ -125,7 +131,13 @@ window.MIC_DATA = {
         "Gluten-Free",
         "Meal Prep"
       ],
-      "macros": null,
+      "macros": {
+        "cal": 385,
+        "protein": 42,
+        "carbs": 7,
+        "fat": 20,
+        "est": true
+      },
       "image": "assets/img/recipe-slow-cooker-lemon-greek-chicken.jpg",
       "blurb": "Set-and-forget slow-cooker chicken \u2014 juicy, zesty and perfect for meal prep.",
       "ingredients": [
@@ -168,7 +180,13 @@ window.MIC_DATA = {
         "High-Protein",
         "Fresh"
       ],
-      "macros": null,
+      "macros": {
+        "cal": 185,
+        "protein": 9,
+        "carbs": 12,
+        "fat": 11,
+        "est": true
+      },
       "image": "assets/img/recipe-best-broccoli-salad.jpg",
       "blurb": "Chunky, fresh and full of flavour \u2014 add chicken or tofu to turn it into a complete high-protein lunch.",
       "ingredients": [

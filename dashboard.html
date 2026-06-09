@@ -4,64 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Member Dashboard | Nutrition Made Simple</title>
-<meta name="description" content="The Nutrition Made Simple member dashboard.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="description" content="The Nutrition Made Simple member dashboard.">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="proto-flag">✦ PROTOTYPE PREVIEW — this is the new MEMBER DASHBOARD concept (what a paying member sees after logging in)</div>
+<div class="proto-flag">✦ PROTOTYPE PREVIEW — this is the new MEMBER DASHBOARD (what a paying member sees after logging in). Every tab on the left works.</div>
 
 <div class="dash">
   <aside class="dash-side">
     <a class="brand" href="index.html"><span class="mark">M</span> <span>Nutrition Made&nbsp;Simple</span></a>
     <nav class="dnav">
       <small>My Recipes</small>
-      <button class="dnav-tab active" data-meal="Breakfast"><span class="ico">🍳</span> Breakfast</button>
-      <button class="dnav-tab" data-meal="Lunch"><span class="ico">🥗</span> Lunch</button>
-      <button class="dnav-tab" data-meal="Dinner"><span class="ico">🍽</span> Dinner</button>
-      <button class="dnav-tab" data-meal="All"><span class="ico">📖</span> All Recipes</button>
+      <button data-view="Breakfast"><span class="ico">🍳</span> Breakfast</button>
+      <button data-view="Lunch"><span class="ico">🥗</span> Lunch</button>
+      <button data-view="Dinner"><span class="ico">🍽</span> Dinner</button>
+      <button data-view="All"><span class="ico">📖</span> All Recipes</button>
       <div class="sep"></div>
       <small>My Plan</small>
-      <button><span class="ico">📊</span> My Program</button>
-      <button><span class="ico">❤</span> Saved Recipes</button>
-      <button><span class="ico">👯</span> Community</button>
-      <button><span class="ico">🧾</span> My Subscription</button>
+      <button data-view="program"><span class="ico">📊</span> My Program</button>
+      <button data-view="progress"><span class="ico">📈</span> My Progress</button>
+      <button data-view="saved"><span class="ico">❤</span> Saved Recipes</button>
+      <button data-view="community"><span class="ico">👯</span> Community</button>
+      <button data-view="subscription"><span class="ico">🧾</span> My Subscription</button>
       <div class="sep"></div>
-      <button><span class="ico">⚙</span> Settings</button>
-      <button><span class="ico">↩</span> <a href="index.html" style="color:inherit">Back to site</a></button>
+      <button data-view="settings"><span class="ico">⚙</span> Settings</button>
+      <button onclick="location.href='index.html'"><span class="ico">↩</span> Back to site</button>
     </nav>
   </aside>
 
   <main class="dash-main">
     <div class="dash-top">
-      <div>
-        <h1>Welcome back, Sarah 🌿</h1>
-        <p class="sub">Here's everything you need to eat well this week.</p>
-      </div>
+      <div><h1>Welcome back, Sarah 🌿</h1><p class="sub">Here's everything you need to eat well this week.</p></div>
       <div class="avatar">S</div>
     </div>
-
-    <div class="widgets">
-      <div class="widget"><div class="wlabel">Current program</div><div class="wbig" style="font-size:1.3rem">The Strong Method</div><div class="wbar"><i style="width:62%"></i></div><p style="font-size:.82rem;color:var(--muted);margin-top:8px">Month 4 of 6 · on track</p></div>
-      <div class="widget"><div class="wlabel">Consistency streak</div><div class="wbig">7 days 🔥</div><p style="font-size:.82rem;color:var(--muted);margin-top:8px">Your best streak yet — keep it going.</p></div>
-      <div class="widget"><div class="wlabel">This week</div><div class="wbig">5 recipes</div><p style="font-size:.82rem;color:var(--muted);margin-top:8px">Saved &amp; ready to cook.</p></div>
-    </div>
-
-    <div class="tabwrap">
-      <h2 id="dashTabTitle">Breakfast</h2>
-      <p class="muted" id="dashTabSub"></p>
-      <div class="recipe-grid" id="dashRecipes"></div>
-    </div>
-
-    <div style="margin-top:40px" class="card">
-      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between">
-        <div style="display:flex;gap:14px;align-items:center">
-          <div class="ico" style="margin:0">👯</div>
-          <div><h3 style="margin:0">The Members Community</h3><p style="margin:0;color:var(--muted)">373 women sharing wins, questions and accountability.</p></div>
-        </div>
-        <button class="btn btn-primary btn-sm">Open community →</button>
-      </div>
-    </div>
+    <div id="dashView"></div>
   </main>
 </div>
 
