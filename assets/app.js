@@ -20,7 +20,7 @@
   function footerHTML() {
     return `<footer><div class="wrap"><div class="fgrid">
         <div><a class="brand brand--light" href="index.html" style="margin-bottom:14px"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
-          <p style="opacity:.85;max-width:34ch;font-size:.92rem;margin-top:14px">Evidence-based nutrition &amp; strength coaching for women. Bachelor-qualified Nutritionist · Brisbane, Australia.</p></div>
+          <p style="opacity:.85;max-width:34ch;font-size:.92rem;margin-top:14px">Evidence-based nutrition &amp; strength coaching for women. Bachelor-qualified Nutritionist · Townsville, Queensland, Australia.</p></div>
         <div><h4>Explore</h4><a href="recipes.html">Recipes</a><a href="blog.html">Blog</a><a href="programs.html">Programs</a><a href="shop.html">Shop</a><a href="login.html">Member login</a></div>
         <div><h4>Company</h4><a href="about.html">About Rachel</a><a href="public-health.html">Public Health</a><a href="contact.html">Contact</a><a href="terms.html">Terms &amp; Conditions</a><a href="https://www.instagram.com/moveinspiringchange" target="_blank" rel="noopener">Instagram ↗</a></div>
       </div><div class="copy"><span>© Move Inspiring Change</span><span>Prototype preview · not the live site</span></div></div></footer>`;
@@ -225,7 +225,7 @@
     };
     const settingsView = () => `<div class="tabwrap"><h2>Settings</h2><p class="muted">Your profile, preferences &amp; account.</p>
       <div class="panel"><h3>Profile</h3><div class="kv"><span>Name</span><b>Sarah Mitchell</b></div><div class="kv"><span>Email</span><b>sarah@email.com</b></div>
-      <div class="kv"><span>Phone</span><b>0412 345 678</b></div><div class="kv"><span>Location</span><b>Brisbane, QLD</b></div>
+      <div class="kv"><span>Phone</span><b>0412 345 678</b></div><div class="kv"><span>Location</span><b>Townsville, QLD</b></div>
       <div class="kv"><span>Dietary tags</span><b>High-protein · Gluten-free</b></div><div class="kv"><span>Allergies</span><b>None listed</b></div></div>
       <div class="panel" style="margin-top:18px"><h3>Notifications</h3><div class="kv"><span>New recipe alerts</span><span class="pill-ok">On</span></div>
       <div class="kv"><span>Weekly check-in reminders</span><span class="pill-ok">On</span></div><div class="kv"><span>Community replies</span><span class="pill-ok">On</span></div>
