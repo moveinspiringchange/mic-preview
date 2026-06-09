@@ -363,6 +363,12 @@ textarea.fld{min-height:140px;resize:vertical}
   .hero-cta{flex-direction:column;align-items:stretch}
   .hero-cta .btn{width:100%;justify-content:center}
   .cta-band .btn{width:100%;justify-content:center}
+  /* long buttons may wrap rather than force the page wider than the screen */
+  .btn{white-space:normal}
+  /* footer stacks: brand full-width, the two link columns side by side */
+  footer .fgrid{grid-template-columns:1fr 1fr;gap:26px 20px}
+  footer .fgrid>div:first-child{grid-column:1 / -1}
+  footer .copy{flex-direction:column;gap:6px;text-align:center;justify-content:center}
 }
 /* dashboard: compact wrapping pill nav instead of a tall stacked block */
 @media(max-width:920px){
