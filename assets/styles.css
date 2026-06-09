@@ -386,7 +386,10 @@ html,body{overflow-x:clip}
 /* members dashboard → off-canvas drawer with a sticky mobile bar */
 .dash-mobilebar{display:none}
 .dash-burger{background:none;border:none;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--green-deep);padding:2px 6px}
-.dash-mb-title{font-family:var(--serif);font-weight:600;color:var(--green-deep);font-size:1.02rem}
+.dash-mb-title{flex:1;text-align:center;padding-right:30px;font-family:var(--serif);font-weight:600;color:var(--green-deep);font-size:1.05rem}
+/* dashboard sidebar brand = MOVE wordmark + "Members Dashboard" label */
+.dash-brand{margin-bottom:6px}
+.dash-eyebrow{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:#cdb5ac;font-weight:700;margin:0 2px 22px}
 @media(max-width:920px){
   .dash{display:block;min-height:auto}
   .dash-side{position:fixed;top:0;left:0;height:100%;width:286px;max-width:86vw;padding:22px 16px;

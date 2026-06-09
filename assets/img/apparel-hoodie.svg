@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8EEE8"/><stop offset="1" stop-color="#EEDBD3"/></linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D3ABA1"/><stop offset="1" stop-color="#C0958A"/></linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="11"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="400" cy="540" rx="222" ry="30" fill="#5A413B" opacity="0.16" filter="url(#soft)"/>
+  <!-- hood behind -->
+  <path d="M322,170 Q400,82 478,170 Q500,212 400,232 Q300,212 322,170 Z" fill="#B78B81"/>
+  <!-- garment body + sleeves -->
+  <path d="M331,156 Q400,92 469,156 Q486,176 502,200 L520,210
+    Q628,256 650,322 Q654,340 636,348 L598,364 Q574,374 558,350 L520,304
+    Q514,420 508,498 Q507,514 492,514 L308,514 Q293,514 292,498
+    Q286,420 280,304 L242,350 Q226,374 202,364 L164,348 Q146,340 150,322
+    Q172,256 280,210 L298,200 Q314,176 331,156 Z" fill="url(#cloth)"/>
+  <!-- hood inner lining + neck rib -->
+  <path d="M342,164 Q400,112 458,164 Q466,198 400,216 Q334,198 342,164 Z" fill="#A77B71"/>
+  <ellipse cx="400" cy="212" rx="54" ry="19" fill="#A77B71"/>
+  <ellipse cx="400" cy="207" rx="54" ry="18" fill="#C99B92"/>
+  <!-- drawstrings -->
+  <path d="M383,211 L381,264" stroke="#F6E7E0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M417,211 L419,264" stroke="#F6E7E0" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="380" cy="268" r="5" fill="#EFD9D0"/><circle cx="420" cy="268" r="5" fill="#EFD9D0"/>
+  <!-- kangaroo pocket -->
+  <path d="M340,392 L460,392 Q468,392 468,400 L468,470 Q468,478 460,478 L340,478 Q332,478 332,470 L332,400 Q332,392 340,392 Z" fill="#BC9087"/>
+  <path d="M333,404 Q360,422 360,470 M467,404 Q440,422 440,470" fill="none" stroke="#A77B71" stroke-width="3" opacity="0.65"/>
+  <!-- cuffs -->
+  <path d="M566,346 L612,360 Q620,344 612,330 L572,316 Z" fill="#B0837A"/>
+  <path d="M234,346 L188,360 Q180,344 188,330 L228,316 Z" fill="#B0837A"/>
+  <!-- hem ribbing -->
+  <path d="M292,492 L508,492 L508,514 L292,514 Z" fill="#B68A80"/>
+  <g stroke="#A77B71" stroke-width="2" opacity="0.5">
+    <path d="M322,494 L322,512"/><path d="M352,494 L352,512"/><path d="M382,494 L382,512"/>
+    <path d="M412,494 L412,512"/><path d="M442,494 L442,512"/><path d="M472,494 L472,512"/>
+  </g>
+  <!-- wordmark -->
+  <text x="400" y="300" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="34" letter-spacing="2" fill="#FBF1EC">MOVE</text>
+  <text x="400" y="324" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="11" letter-spacing="5" fill="#FBF1EC">INSPIRING CHANGE</text>
+</svg>

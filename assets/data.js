@@ -585,10 +585,11 @@ window.MIC_DATA = {
         "unit": "",
         "cover": "apparel",
         "tag": "Coming soon",
-        "desc": "Premium heavyweight hoodie in forest green with the Move Inspiring Change wordmark.",
+        "image": "assets/img/apparel-hoodie.svg",
+        "desc": "Premium heavyweight hoodie in dusty rose with the Move Inspiring Change wordmark across the chest.",
         "features": [
-          "Heavyweight cotton",
-          "Forest green / sand",
+          "Heavyweight brushed cotton",
+          "Dusty rose / cream",
           "Unisex fit"
         ],
         "link": "contact.html"
@@ -599,10 +600,11 @@ window.MIC_DATA = {
         "unit": "",
         "cover": "apparel",
         "tag": "Coming soon",
-        "desc": "Soft, breathable training tee for the gym or everyday.",
+        "image": "assets/img/apparel-tee.svg",
+        "desc": "Soft, breathable training tee in warm oat with a tonal embroidered wordmark.",
         "features": [
           "Breathable cotton-blend",
-          "Subtle embroidered mark",
+          "Embroidered chest mark",
           "Sizes XS\u2013XXL"
         ],
         "link": "contact.html"
@@ -613,9 +615,10 @@ window.MIC_DATA = {
         "unit": "",
         "cover": "apparel",
         "tag": "Coming soon",
-        "desc": "Canvas tote + insulated drink bottle \u2014 your meal-prep companions.",
+        "image": "assets/img/apparel-tote.svg",
+        "desc": "Canvas tote + insulated rosewood drink bottle \u2014 your meal-prep companions.",
         "features": [
-          "Canvas tote",
+          "Canvas tote bag",
           "750ml insulated bottle",
           "Brand bundle"
         ],

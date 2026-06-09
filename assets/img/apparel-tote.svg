@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8EEE8"/><stop offset="1" stop-color="#EEDBD3"/></linearGradient>
+    <linearGradient id="canvas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBDCCB"/><stop offset="1" stop-color="#DECBB6"/></linearGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A6259"/><stop offset="0.5" stop-color="#7C564F"/><stop offset="1" stop-color="#6A4942"/></linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="11"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <ellipse cx="292" cy="536" rx="170" ry="26" fill="#5A413B" opacity="0.15" filter="url(#soft)"/>
+  <ellipse cx="585" cy="540" rx="78" ry="20" fill="#5A413B" opacity="0.16" filter="url(#soft)"/>
+
+  <!-- ===== canvas tote ===== -->
+  <path d="M150,276 L434,276 L418,520 Q417,524 413,524 L171,524 Q167,524 166,520 L150,276 Z" fill="url(#canvas)"/>
+  <!-- top band -->
+  <rect x="150" y="276" width="284" height="20" fill="#D8C4AC"/>
+  <!-- handles (flat loops, taupe straps) -->
+  <path d="M212,284 C216,214 290,214 294,284" fill="none" stroke="#B59A86" stroke-width="12" stroke-linecap="round"/>
+  <path d="M300,284 C304,222 368,222 372,284" fill="none" stroke="#A98B7D" stroke-width="12" stroke-linecap="round"/>
+  <!-- canvas seam -->
+  <path d="M158,300 L426,300" stroke="#D2BDA2" stroke-width="2" opacity="0.5"/>
+  <!-- wordmark -->
+  <text x="292" y="404" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="30" letter-spacing="2" fill="#7C564F">MOVE</text>
+  <text x="292" y="426" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="10" letter-spacing="4.5" fill="#7C564F">INSPIRING CHANGE</text>
+
+  <!-- ===== insulated bottle ===== -->
+  <rect x="528" y="232" width="116" height="290" rx="44" fill="url(#bottle)"/>
+  <!-- shoulder -->
+  <path d="M548,236 Q586,222 624,236 L624,250 L548,250 Z" fill="#6A4942"/>
+  <!-- lid -->
+  <rect x="552" y="188" width="88" height="52" rx="16" fill="#45302C"/>
+  <rect x="572" y="176" width="48" height="20" rx="9" fill="#3A2723"/>
+  <!-- centre band/label -->
+  <rect x="528" y="336" width="116" height="58" fill="#F1DED6"/>
+  <text x="586" y="372" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="3" fill="#7C564F">MIC</text>
+  <!-- gloss highlight -->
+  <rect x="546" y="252" width="13" height="250" rx="6" fill="#FFFFFF" opacity="0.16"/>
+</svg>
