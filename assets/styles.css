@@ -369,6 +369,9 @@ textarea.fld{min-height:140px;resize:vertical}
   footer .fgrid{grid-template-columns:1fr 1fr;gap:26px 20px}
   footer .fgrid>div:first-child{grid-column:1 / -1}
   footer .copy{flex-direction:column;gap:6px;text-align:center;justify-content:center}
+  /* long unbreakable values (emails etc.) wrap instead of widening the column */
+  .kv{flex-wrap:wrap;gap:2px 12px}
+  .kv b{overflow-wrap:anywhere;text-align:left}
 }
 /* dashboard: compact wrapping pill nav instead of a tall stacked block */
 @media(max-width:920px){
