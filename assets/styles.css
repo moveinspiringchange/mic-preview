@@ -279,7 +279,7 @@ footer .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-si
 @media(max-width:600px){.results-grid{grid-template-columns:1fr}.stat-row{gap:20px}}
 
 /* forms / checkout / pages */
-.fld{border:1px solid var(--line);border-radius:12px;padding:.85em 1.1em;font-family:var(--sans);font-size:.95rem;background:#fff;width:100%}
+.fld{border:1px solid var(--line);border-radius:12px;padding:.85em 1.1em;font-family:var(--sans);font-size:.95rem;background:#fff;width:100%;min-width:0}
 .fld:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--sage-soft)}
 textarea.fld{min-height:140px;resize:vertical}
 .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow-sm)}
@@ -342,6 +342,8 @@ textarea.fld{min-height:140px;resize:vertical}
 .band .ov{background:linear-gradient(180deg,rgba(53,42,39,.30),rgba(53,42,39,.68))}
 
 /* ============ v9: mobile / all-device hardening ============ */
+/* grid/flex children must be allowed to shrink below intrinsic content width */
+.panel,.pcard,.card,.scard,.rcard,.widget,.ba,.checkout-grid>*{min-width:0}
 /* never allow sideways scroll; let long headings wrap instead of clipping */
 @media(max-width:760px){
   html,body{overflow-x:hidden;max-width:100%}
