@@ -17,30 +17,38 @@
   /* ---------- shared chrome (nav + footer) ---------- */
   const NAVLINKS = [['about.html', 'About'], ['recipes.html', 'Recipes'], ['blog.html', 'Blog'], ['programs.html', 'Programs'],
     ['public-health.html', 'Public Health'], ['shop.html', 'Shop'], ['contact.html', 'Contact']];
-  function injectChrome() {
-    if (document.body.dataset.chrome !== 'site') return;
-    const active = document.body.dataset.page || '';
-    const links = NAVLINKS.map(([h, t]) => `<a href="${h}" class="${h.startsWith(active) && active ? 'active' : ''}">${t}</a>`).join('');
-    document.body.insertAdjacentHTML('afterbegin',
-      `<div class="proto-flag">✦ PROTOTYPE PREVIEW — the full Move Inspiring Change site, built with Rachel's real content. Not the live site.</div>
-      <header class="nav"><div class="wrap nav-inner">
-        <a class="brand" href="index.html"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
-        <nav class="nav-links">${links}</nav>
-        <div class="nav-cta"><a class="nav-login" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
-        <button class="burger" aria-label="Menu">☰</button>
-      </div></header>`);
-    document.body.insertAdjacentHTML('beforeend',
-      `<footer><div class="wrap"><div class="fgrid">
+  function footerHTML() {
+    return `<footer><div class="wrap"><div class="fgrid">
         <div><a class="brand brand--light" href="index.html" style="margin-bottom:14px"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
           <p style="opacity:.85;max-width:34ch;font-size:.92rem;margin-top:14px">Evidence-based nutrition &amp; strength coaching for women. Bachelor-qualified Nutritionist · Brisbane, Australia.</p></div>
         <div><h4>Explore</h4><a href="recipes.html">Recipes</a><a href="blog.html">Blog</a><a href="programs.html">Programs</a><a href="shop.html">Shop</a><a href="login.html">Member login</a></div>
         <div><h4>Company</h4><a href="about.html">About Rachel</a><a href="public-health.html">Public Health</a><a href="contact.html">Contact</a><a href="terms.html">Terms &amp; Conditions</a><a href="https://www.instagram.com/moveinspiringchange" target="_blank" rel="noopener">Instagram ↗</a></div>
-      </div><div class="copy"><span>© Move Inspiring Change</span><span>Prototype preview · not the live site</span></div></div></footer>`);
-    const burger = $('.burger');
-    burger && burger.addEventListener('click', () => {
-      const l = $('.nav-links'); const open = l.style.display === 'flex';
-      Object.assign(l.style, open ? { display: '' } : { display: 'flex', position: 'absolute', top: '72px', left: 0, right: 0, flexDirection: 'column', background: 'var(--cream)', padding: '18px 24px', borderBottom: '1px solid var(--line)', gap: '16px' });
-    });
+      </div><div class="copy"><span>© Move Inspiring Change</span><span>Prototype preview · not the live site</span></div></div></footer>`;
+  }
+  function injectChrome() {
+    if (document.body.dataset.chrome === 'site') {
+      const active = document.body.dataset.page || '';
+      const links = NAVLINKS.map(([h, t]) => `<a href="${h}" class="${h.startsWith(active) && active ? 'active' : ''}">${t}</a>`).join('');
+      const dlinks = NAVLINKS.map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
+      document.body.insertAdjacentHTML('afterbegin',
+        `<div class="proto-flag">✦ PROTOTYPE PREVIEW — the full Move Inspiring Change site, built with Rachel's real content. Not the live site.</div>
+        <header class="nav"><div class="wrap nav-inner">
+          <a class="brand" href="index.html"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
+          <nav class="nav-links">${links}</nav>
+          <div class="nav-cta"><a class="nav-login" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
+          <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+        </div>
+        <div class="nav-drawer">${dlinks}<a class="nav-login" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
+        </header>`);
+      document.body.insertAdjacentHTML('beforeend', footerHTML());
+      const burger = $('.burger'), drawer = $('.nav-drawer');
+      const setOpen = (o) => { drawer.classList.toggle('open', o); burger.textContent = o ? '✕' : '☰'; burger.setAttribute('aria-expanded', String(o)); };
+      burger && burger.addEventListener('click', () => setOpen(!drawer.classList.contains('open')));
+      drawer && $$('a', drawer).forEach(a => a.addEventListener('click', () => setOpen(false)));
+    } else if ($('.dash')) {
+      /* members dashboard: give it the shared footer too */
+      document.body.insertAdjacentHTML('beforeend', footerHTML());
+    }
   }
   injectChrome();
 
@@ -223,8 +231,16 @@
     const VIEWS = { Breakfast: () => recipeView('Breakfast'), Lunch: () => recipeView('Lunch'), Dinner: () => recipeView('Dinner'), All: () => recipeView('All'), program: programView, saved: savedView, community: communityView, subscription: subView, progress: progressView, settings: settingsView,
       'browse-programs': () => '<div class="tabwrap"><h2>Programs, Coaching &amp; Plans</h2><p class="muted">Everything available to you — explore or upgrade anytime.</p>' + [['programs', 'Programs & Training'], ['coaching', '1:1 Coaching & Consults'], ['memberships', 'Memberships']].map(g => '<h3 style="margin:24px 0 12px">' + g[1] + '</h3><div class="price-grid">' + (D.catalog[g[0]] || []).map((o, i) => pcard(o, i, g[0])).join('') + '</div>').join('') + '</div>',
       'browse-shop': () => '<div class="tabwrap"><h2>Shop</h2><p class="muted">Guides, plans &amp; masterclasses.</p><div class="shop-grid">' + (D.catalog.shop || []).map((o, i) => shopCard(o, i, 'shop')).join('') + '</div></div>' };
-    const showv = (v) => { dview.innerHTML = (VIEWS[v] || VIEWS.Breakfast)(); bind(dview); wireDetails(dview); $$('.dnav button').forEach(b => b.classList.toggle('active', b.dataset.view === v)); };
-    $$('.dnav button[data-view]').forEach(b => b.addEventListener('click', () => showv(b.dataset.view)));
+    /* mobile off-canvas drawer */
+    const side = $('.dash-side');
+    let backdrop = $('.dash-backdrop');
+    if (side && !backdrop) { backdrop = document.createElement('div'); backdrop.className = 'dash-backdrop'; document.body.appendChild(backdrop); }
+    const drawer = (o) => { if (!side) return; side.classList.toggle('open', o); backdrop && backdrop.classList.toggle('open', o); };
+    const showv = (v) => { dview.innerHTML = (VIEWS[v] || VIEWS.Breakfast)(); bind(dview); wireDetails(dview); $$('.dnav button').forEach(b => b.classList.toggle('active', b.dataset.view === v)); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    $$('.dnav button[data-view]').forEach(b => b.addEventListener('click', () => { showv(b.dataset.view); drawer(false); }));
+    const dburger = $('.dash-burger');
+    dburger && dburger.addEventListener('click', () => drawer(!side.classList.contains('open')));
+    backdrop && backdrop.addEventListener('click', () => drawer(false));
     showv('Breakfast');
   }
 

@@ -199,11 +199,8 @@ footer .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-si
   .grid-3,.grid-4,.recipe-grid,.price-grid,.widgets{grid-template-columns:1fr 1fr}
   .modal-cols{grid-template-columns:1fr}
   .nav-links{display:none}
+  .nav-cta{margin-left:auto}
   .burger{display:block}
-  .dash{grid-template-columns:1fr}
-  .dash-side{position:static;height:auto;display:flex;flex-direction:column}
-  .dnav{flex-direction:row;flex-wrap:wrap}
-  .dash-main{padding:24px}
 }
 @media(max-width:600px){
   section{padding:60px 0}
@@ -373,17 +370,46 @@ textarea.fld{min-height:140px;resize:vertical}
   .kv{flex-wrap:wrap;gap:2px 12px}
   .kv b{overflow-wrap:anywhere;text-align:left}
 }
-/* dashboard: compact wrapping pill nav instead of a tall stacked block */
+/* ============ v13: nav drawer + dashboard drawer + trust + overflow ============ */
+/* kill horizontal drift on phones without breaking the sticky nav (clip, not hidden) */
+html,body{overflow-x:clip}
+/* shared mobile menu drawer that hangs beneath the top bar */
+.nav-drawer{display:none}
 @media(max-width:920px){
-  .dash-side{padding:14px 14px 16px}
-  .dash-side .brand{margin-bottom:12px}
-  .dnav{gap:8px;align-content:flex-start}
-  .dnav button{width:auto;flex:0 0 auto;padding:.5em .85em}
-  .dnav small{flex-basis:100%;width:100%;margin:8px 2px 0}
-  .dnav .sep{flex-basis:100%;width:100%;height:0;background:none;border-top:1px solid rgba(255,255,255,.14);margin:8px 0 0}
+  .nav-drawer{display:flex;flex-direction:column;max-height:0;overflow:hidden;background:var(--cream);
+    border-bottom:1px solid var(--line);transition:max-height .3s ease}
+  .nav-drawer.open{max-height:86vh;overflow:auto;box-shadow:var(--shadow-sm)}
+  .nav-drawer a{padding:15px 26px;font-size:1rem;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);opacity:.92}
+  .nav-drawer a.nav-login{color:var(--green-deep)}
+  .nav-drawer .btn{margin:16px 26px;justify-content:center;border-bottom:none}
 }
-@media(max-width:600px){
-  .dash-main{padding:20px 16px}
-  .dash-top{gap:12px}
+/* members dashboard → off-canvas drawer with a sticky mobile bar */
+.dash-mobilebar{display:none}
+.dash-burger{background:none;border:none;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--green-deep);padding:2px 6px}
+.dash-mb-title{font-family:var(--serif);font-weight:600;color:var(--green-deep);font-size:1.02rem}
+@media(max-width:920px){
+  .dash{display:block;min-height:auto}
+  .dash-side{position:fixed;top:0;left:0;height:100%;width:286px;max-width:86vw;padding:22px 16px;
+    display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+    z-index:70;overflow-y:auto}
+  .dash-side.open{transform:none;box-shadow:0 24px 70px rgba(53,42,39,.45)}
+  .dash-side .brand{margin-bottom:18px}
+  .dnav{flex-direction:column;flex-wrap:nowrap;gap:3px}
+  .dnav button{width:100%;flex:none;padding:.78em 1em;font-size:.95rem}
+  .dnav small{flex-basis:auto;width:auto;padding:0 1em;margin:12px 0 2px}
+  .dnav .sep{flex-basis:auto;width:auto;height:1px;background:rgba(255,255,255,.14);border:none;margin:12px 6px}
+  .dash-backdrop{position:fixed;inset:0;background:rgba(40,28,24,.5);opacity:0;visibility:hidden;transition:.3s;z-index:65}
+  .dash-backdrop.open{opacity:1;visibility:visible}
+  .dash-main{padding:0}
+  .dash-mobilebar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:40;
+    background:rgba(252,248,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .dash-content{padding:22px 16px}
   .dash-top h1{font-size:1.5rem}
+  .dash-top .avatar{display:none}
+}
+/* friendlier trust strip on phones (2×2 grid, not a left-packed row) */
+@media(max-width:600px){
+  .trust .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;justify-content:initial;padding:20px 18px}
+  .trust span{font-size:.8rem;align-items:flex-start;line-height:1.3}
+  .dash-content{padding:20px 14px}
 }

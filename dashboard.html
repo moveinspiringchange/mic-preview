@@ -6,7 +6,7 @@
 <title>Member Dashboard | Nutrition Made Simple</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="The Nutrition Made Simple member dashboard.">
-<link rel="stylesheet" href="assets/styles.css?v=12">
+<link rel="stylesheet" href="assets/styles.css?v=13">
 </head>
 <body>
 <div class="proto-flag">✦ PROTOTYPE PREVIEW — this is the new MEMBER DASHBOARD (what a paying member sees after logging in). Every tab on the left works.</div>
@@ -38,15 +38,21 @@
   </aside>
 
   <main class="dash-main">
-    <div class="dash-top">
-      <div><h1>Welcome back, Sarah 🌿</h1><p class="sub">Here's everything you need to eat well this week.</p></div>
-      <div class="avatar">S</div>
+    <div class="dash-mobilebar">
+      <button class="dash-burger" aria-label="Open menu">☰</button>
+      <span class="dash-mb-title">Nutrition Made&nbsp;Simple</span>
     </div>
-    <div id="dashView"></div>
+    <div class="dash-content">
+      <div class="dash-top">
+        <div><h1>Welcome back, Sarah 🌿</h1><p class="sub">Here's everything you need to eat well this week.</p></div>
+        <div class="avatar">S</div>
+      </div>
+      <div id="dashView"></div>
+    </div>
   </main>
 </div>
 
-<script src="assets/data.js?v=12"></script>
-<script src="assets/app.js?v=12"></script>
+<script src="assets/data.js?v=13"></script>
+<script src="assets/app.js?v=13"></script>
 </body>
 </html>
