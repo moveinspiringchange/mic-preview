@@ -24,17 +24,17 @@
     document.body.insertAdjacentHTML('afterbegin',
       `<div class="proto-flag">✦ PROTOTYPE PREVIEW — the full Move Inspiring Change site, built with Rachel's real content. Not the live site.</div>
       <header class="nav"><div class="wrap nav-inner">
-        <a class="brand" href="index.html"><span class="mark">M</span> Move Inspiring Change</a>
+        <a class="brand" href="index.html"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
         <nav class="nav-links">${links}</nav>
         <div class="nav-cta"><a class="nav-login" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
         <button class="burger" aria-label="Menu">☰</button>
       </div></header>`);
     document.body.insertAdjacentHTML('beforeend',
       `<footer><div class="wrap"><div class="fgrid">
-        <div><a class="brand" href="index.html" style="margin-bottom:14px"><span class="mark">M</span> Move Inspiring Change</a>
-          <p style="opacity:.85;max-width:34ch;font-size:.92rem">Evidence-based nutrition &amp; strength coaching for women. Bachelor-qualified Nutritionist · Brisbane, Australia.</p></div>
-        <div><h4>Explore</h4><a href="recipes.html">Recipes</a><a href="programs.html">Programs</a><a href="public-health.html">Public Health</a><a href="shop.html">Shop</a><a href="login.html">Member login</a></div>
-        <div><h4>Company</h4><a href="about.html">About Rachel</a><a href="contact.html">Contact</a><a href="terms.html">Terms &amp; Conditions</a></div>
+        <div><a class="brand brand--light" href="index.html" style="margin-bottom:14px"><span class="logo-move">MOVE</span><span class="logo-div"></span><span class="logo-sub">Inspiring<br>Change</span></a>
+          <p style="opacity:.85;max-width:34ch;font-size:.92rem;margin-top:14px">Evidence-based nutrition &amp; strength coaching for women. Bachelor-qualified Nutritionist · Brisbane, Australia.</p></div>
+        <div><h4>Explore</h4><a href="recipes.html">Recipes</a><a href="blog.html">Blog</a><a href="programs.html">Programs</a><a href="shop.html">Shop</a><a href="login.html">Member login</a></div>
+        <div><h4>Company</h4><a href="about.html">About Rachel</a><a href="public-health.html">Public Health</a><a href="contact.html">Contact</a><a href="terms.html">Terms &amp; Conditions</a><a href="https://www.instagram.com/moveinspiringchange" target="_blank" rel="noopener">Instagram ↗</a></div>
       </div><div class="copy"><span>© Move Inspiring Change</span><span>Prototype preview · not the live site</span></div></div></footer>`);
     const burger = $('.burger');
     burger && burger.addEventListener('click', () => {
@@ -86,10 +86,10 @@
   const feat = $('#featuredRecipes'); if (feat) { feat.innerHTML = D.recipes.slice(0, 3).map((r, i) => card(r, i)).join(''); bind(feat); }
 
   /* ---------- designed offer cover + detail modal ---------- */
-  const COVER = { flagship: ['linear-gradient(135deg,var(--green-deep),var(--green))', '🏆'], consult: ['linear-gradient(135deg,var(--green),var(--sage))', '💬'],
-    training: ['linear-gradient(135deg,#2a6f4d,#4b916d)', '🏋️'], member: ['linear-gradient(135deg,var(--accent),var(--gold))', '🌿'],
-    guide: ['linear-gradient(135deg,#1f5c43,#8aa07e)', '📘'], apparel: ['linear-gradient(135deg,#36443b,#6b7a63)', '👕'] };
-  function cover(o) { const c = COVER[o.cover] || COVER.guide; return `<div class="pcover" style="background:${c[0]}"><span class="pcover-ic">${c[1]}</span><span class="pcover-t">${o.name}</span>${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>`; }
+  const COVER = { flagship: ['linear-gradient(140deg,#45302C,#7C564F)', 'l'], consult: ['linear-gradient(140deg,#7C564F,#C99B92)', 'l'],
+    training: ['linear-gradient(140deg,#5A423D,#9C6F66)', 'l'], member: ['linear-gradient(140deg,#F4E1DB,#E7C9C0)', 'd'],
+    guide: ['linear-gradient(140deg,#F1E2DC,#E3C8BF)', 'd'], apparel: ['linear-gradient(140deg,#352A27,#5C4C47)', 'l'] };
+  function cover(o) { const c = COVER[o.cover] || COVER.guide; return `<div class="pcover ${c[1] === 'd' ? 'pcover-dark' : ''}" style="background:${c[0]}"><span class="pcover-brand">MOVE · INSPIRING CHANGE</span><span class="pcover-t">${o.name}</span><span class="pcover-cat">${o.category || (o.unit ? '· ' + o.unit : '')}</span>${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>`; }
   function pr(o) { return typeof o.price === 'number' ? `$${o.price}` : o.price; }
   function offerModal(o) {
     if (!o) return; let m = $('#offerModal'); if (!m) { m = document.createElement('div'); m.id = 'offerModal'; m.className = 'modal'; document.body.appendChild(m); }
@@ -219,8 +219,10 @@
       <div class="kv"><span>Weekly check-in reminders</span><span class="pill-ok">On</span></div><div class="kv"><span>Community replies</span><span class="pill-ok">On</span></div>
       <div class="kv"><span>Marketing emails</span><span style="color:var(--muted)">Off</span></div></div>
       <div class="panel" style="margin-top:18px"><h3>Account</h3><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"><button class="btn btn-ghost btn-sm" data-cta="Change password">Change password</button><button class="btn btn-ghost btn-sm" data-cta="Manage billing">Manage billing</button></div></div></div>`;
-    const VIEWS = { Breakfast: () => recipeView('Breakfast'), Lunch: () => recipeView('Lunch'), Dinner: () => recipeView('Dinner'), All: () => recipeView('All'), program: programView, saved: savedView, community: communityView, subscription: subView, progress: progressView, settings: settingsView };
-    const showv = (v) => { dview.innerHTML = (VIEWS[v] || VIEWS.Breakfast)(); bind(dview); $$('.dnav button').forEach(b => b.classList.toggle('active', b.dataset.view === v)); };
+    const VIEWS = { Breakfast: () => recipeView('Breakfast'), Lunch: () => recipeView('Lunch'), Dinner: () => recipeView('Dinner'), All: () => recipeView('All'), program: programView, saved: savedView, community: communityView, subscription: subView, progress: progressView, settings: settingsView,
+      'browse-programs': () => '<div class="tabwrap"><h2>Programs, Coaching &amp; Plans</h2><p class="muted">Everything available to you — explore or upgrade anytime.</p>' + [['programs', 'Programs & Training'], ['coaching', '1:1 Coaching & Consults'], ['memberships', 'Memberships']].map(g => '<h3 style="margin:24px 0 12px">' + g[1] + '</h3><div class="price-grid">' + (D.catalog[g[0]] || []).map((o, i) => pcard(o, i, g[0])).join('') + '</div>').join('') + '</div>',
+      'browse-shop': () => '<div class="tabwrap"><h2>Shop</h2><p class="muted">Guides, plans &amp; masterclasses.</p><div class="shop-grid">' + (D.catalog.shop || []).map((o, i) => shopCard(o, i, 'shop')).join('') + '</div></div>' };
+    const showv = (v) => { dview.innerHTML = (VIEWS[v] || VIEWS.Breakfast)(); bind(dview); wireDetails(dview); $$('.dnav button').forEach(b => b.classList.toggle('active', b.dataset.view === v)); };
     $$('.dnav button[data-view]').forEach(b => b.addEventListener('click', () => showv(b.dataset.view)));
     showv('Breakfast');
   }

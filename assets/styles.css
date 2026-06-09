@@ -313,3 +313,30 @@ textarea.fld{min-height:140px;resize:vertical}
 .lock-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:36px;text-align:center;max-width:420px}
 @media(max-width:760px){.shop-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.shop-grid{grid-template-columns:1fr}}
+
+/* ============ v8: nude/blush rebrand + logo + better covers ============ */
+:root{
+  --cream:#FCF8F5; --sand:#F6EBE7; --sand-2:#EEDDD6;
+  --ink:#352A27; --muted:#9A867F;
+  --green:#7C564F; --green-deep:#45302C; --sage:#C99B92; --sage-soft:#F4E1DB;
+  --accent:#CB8C7C; --accent-soft:#F6DFD7; --gold:#C49A6C; --line:#EEE1DB;
+}
+/* MOVE | INSPIRING CHANGE wordmark */
+.logo-move{font-family:var(--sans);font-weight:800;font-size:1.42rem;letter-spacing:-.02em;color:var(--ink);line-height:.85}
+.logo-div{width:2px;height:23px;background:var(--ink);opacity:.3;margin:0 1px}
+.logo-sub{font-family:var(--sans);font-weight:600;font-size:.56rem;letter-spacing:.14em;line-height:1.2;color:var(--ink);text-transform:uppercase}
+.brand--light .logo-move,.brand--light .logo-sub{color:#fff}
+.brand--light .logo-div{background:#fff}
+/* compact dashboard sidebar */
+.dnav button{padding:.5em .9em;font-size:.9rem}
+.dnav .sep{margin:9px 6px}
+.dnav small{margin:4px 0}
+/* redesigned, premium product covers (no more emoji boxes) */
+.pcover{aspect-ratio:4/3;border-radius:14px;display:flex;flex-direction:column;justify-content:space-between;padding:20px;color:#fff;border:1px solid rgba(255,255,255,.22);margin-bottom:14px}
+.pcover.pcover-dark{color:var(--ink);border-color:rgba(53,42,39,.12)}
+.pcover-ic{display:none}
+.pcover-brand{font-size:.58rem;font-weight:700;letter-spacing:.18em;opacity:.82}
+.pcover-t{font-family:var(--serif);font-size:1.4rem;font-weight:600;line-height:1.08;max-width:100%;margin-top:auto}
+.pcover-cat{font-size:.66rem;letter-spacing:.06em;opacity:.85;margin-top:7px;text-transform:uppercase}
+.scard .pcover{aspect-ratio:4/3;margin:0}
+.band .ov{background:linear-gradient(180deg,rgba(53,42,39,.30),rgba(53,42,39,.68))}
