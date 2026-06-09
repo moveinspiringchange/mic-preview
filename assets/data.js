@@ -1,12 +1,10 @@
 window.MIC_DATA = {
   "brand": {
     "name": "Move Inspiring Change",
-    "tagline": "Evidence-based nutrition & strength coaching for women",
-    "nutritionist": "Bachelor-qualified Nutritionist \u00b7 Brisbane, Australia"
+    "tagline": "Evidence-based nutrition & strength coaching for women"
   },
   "recipes": [
     {
-      "id": "19dc78b1-4380-48ac-a3ed-1676f48b2cde",
       "name": "Berry Vanilla Protein Smoothie",
       "meal": "Breakfast",
       "time": "10 min",
@@ -41,7 +39,6 @@ window.MIC_DATA = {
       ]
     },
     {
-      "id": "83ac7f32-b3ba-4fd6-b4e5-e261e86089ed",
       "name": "Pronola \u2014 Protein Granola",
       "meal": "Breakfast",
       "time": "25 min",
@@ -77,7 +74,6 @@ window.MIC_DATA = {
       ]
     },
     {
-      "id": "85cd02fa-2d55-4967-a35e-be60bc786de4",
       "name": "Prawn, Chilli & Garlic Linguine",
       "meal": "Dinner",
       "time": "25 min",
@@ -121,7 +117,6 @@ window.MIC_DATA = {
       ]
     },
     {
-      "id": "b7bef56e-f625-4161-a6fe-28ca3b990fea",
       "name": "Slow-Cooker Lemon Greek Chicken",
       "meal": "Dinner",
       "time": "4 hrs",
@@ -170,7 +165,6 @@ window.MIC_DATA = {
       ]
     },
     {
-      "id": "881935a6-d7b4-4003-b0ba-c0b765b2d7ad",
       "name": "Best Broccoli Salad",
       "meal": "Lunch",
       "time": "15 min",
@@ -214,126 +208,276 @@ window.MIC_DATA = {
     }
   ],
   "catalog": {
-    "services": [
+    "coaching": [
       {
-        "name": "Initial Nutrition Assessment",
-        "price": 179,
-        "unit": "once",
-        "tag": "Start here",
-        "desc": "A 60-minute deep-dive into your body, habits and goals \u2014 with a personalised, evidence-based strategy. Bachelor-qualified Nutritionist.",
+        "price": 181,
+        "desc": "A structured, evidence-based nutrition consultation designed to help you understand your body, your habits, and how to fuel yourself confidently, without restriction or confusion.",
         "features": [
-          "60-min consultation",
-          "Full intake & habit analysis",
+          "Comprehensive Nutrition Assessment",
+          "Review of intake, lifestyle & goals",
+          "Habit analysis & behaviour support",
           "Personalised nutrition strategy",
-          "Take-home resources"
-        ]
+          "Take-home resources & food journal",
+          "60-minute consultation",
+          "Bachelor-qualified Nutritionist",
+          "Evidence-based approach"
+        ],
+        "unit": "one-off",
+        "tag": "Start here",
+        "link": "checkout.html?p=initial-nutrition-assessment",
+        "cover": "consult",
+        "name": "Initial Nutrition Assessment"
       },
       {
-        "name": "Nutrition Review & Check-In",
         "price": 89,
+        "desc": "Follow-up consultation after your initial assessment to review progress, address challenges, and refine your nutrition strategy to support continued progress.",
+        "features": [
+          "Review progress since your initial consultation",
+          "Adjust nutrition strategy or plan if needed",
+          "Problem-solve barriers or plateaus",
+          "Ongoing nutrition education and support",
+          "Delivered by a Bachelor-qualified Nutritionist."
+        ],
         "unit": "30 min",
-        "tag": "",
-        "desc": "A focused 30-minute check-in to review progress, adjust your plan and keep you accountable.",
-        "features": [
-          "30-min session",
-          "Progress review",
-          "Plan adjustments"
-        ]
+        "link": "checkout.html?p=nutrition-review-check-in",
+        "cover": "consult",
+        "name": "Nutrition Review & Check-In"
       },
       {
-        "name": "Teen Athlete Nutrition",
-        "price": 159,
-        "unit": "once",
-        "tag": "",
-        "desc": "Specialist nutrition guidance for young athletes \u2014 fuelling performance, growth and recovery the right way.",
+        "price": 161,
+        "desc": "Multi-day meets or athletes competing across multiple events, this plan provides tailored fuelling strategies to sustain energy, optimise recovery & keep performance consistent.",
         "features": [
-          "Tailored for teens",
-          "Performance-focused",
-          "Parent-friendly"
-        ]
-      }
-    ],
-    "subscriptions": [
-      {
-        "name": "Nutrition Made Simple",
-        "price": 15,
-        "unit": "/month",
-        "tag": "Most popular",
-        "image": "",
-        "desc": "Your members club: monthly high-protein recipes, a 7-day starter plan and ongoing support \u2014 all in one simple dashboard.",
-        "features": [
-          "Monthly high-protein recipes",
-          "7-Day starter plan",
-          "Breakfast / Lunch / Dinner library",
-          "Private community"
-        ]
-      },
-      {
-        "name": "Nutrition Made Simple \u2014 Annual",
-        "price": 95,
-        "unit": "/year",
-        "tag": "Save 47%",
-        "desc": "Everything in the monthly membership, billed yearly \u2014 the best value way to stay consistent all year.",
-        "features": [
-          "All monthly benefits",
-          "Save 47% vs monthly",
-          "Priority support"
-        ]
-      },
-      {
-        "name": "Self-Guided Training Plan",
-        "price": 44,
-        "unit": "/month",
-        "tag": "",
-        "desc": "A structured monthly training plan delivered straight to your training app.",
-        "features": [
-          "New plan monthly",
-          "Progressive programming",
-          "Delivered to your app"
-        ]
-      },
-      {
-        "name": "Custom Monthly Training",
-        "price": 84,
-        "unit": "/month",
-        "tag": "",
-        "desc": "A fully personalised monthly training program built around you.",
-        "features": [
-          "100% personalised",
-          "Monthly updates",
-          "Coach-built"
-        ]
+          "60 min parent & athlete consultation (in person or phone)",
+          "Individual energy & fuel guidance",
+          "(based on training, sport, and schedule)",
+          "Simple Fuel Framework on what to eat",
+          "\u201cNervous stomach\u201d strategy",
+          "Hydration guidance",
+          "7-day follow-up support (message-based)"
+        ],
+        "unit": "one-off",
+        "link": "checkout.html?p=teen-athlete-nutrition",
+        "cover": "consult",
+        "name": "Teen Athlete Nutrition"
       }
     ],
     "programs": [
       {
         "name": "The Strong Method\u2122",
-        "price": "From $199",
+        "price": "From 199",
         "unit": "/month",
         "tag": "Flagship",
-        "desc": "A 6\u20139 month transformation for women 35\u201360 \u2014 nutrition, strength and habit mastery, with weekly check-ins. No more yo-yo dieting.",
+        "cover": "flagship",
+        "link": "the-strong-method.html",
+        "desc": "A 6\u20139 month transformation for women 35\u201360 \u2014 nutrition, strength and habit mastery, with weekly check-ins. The last \u201cdiet\u201d you'll ever need.",
         "features": [
-          "6\u20139 month transformation",
-          "Weekly check-ins",
-          "Nutrition + strength + habits",
-          "Ongoing coaching"
+          "Personal onboarding questionnaire",
+          "A 4-week custom program built for you",
+          "Weekly check-ins with Rachel",
+          "Nutrition + strength + habit coaching",
+          "Home or gym-based",
+          "Member dashboard & community"
+        ]
+      },
+      {
+        "price": 84,
+        "desc": "A personalised 4-week training program tailored to your goals, schedule, experience, injuries, equipment, and training style. I build it, upload it to the app, and you follow it independently.",
+        "features": [
+          "Personalised onboarding questionnaire",
+          "4-week custom program designed specifically for you",
+          "Gym or home-based version",
+          "Sets, reps, tempo, rest periods, & training notes",
+          "In-app video demonstrations",
+          "Program delivered monthly (new block every 4 weeks)",
+          "Optional upgrade paths (check-ins, feedback or nutrition)"
+        ],
+        "unit": "/month",
+        "link": "checkout.html?p=custom-monthly-training-program",
+        "cover": "training",
+        "name": "Custom Monthly Training Program"
+      },
+      {
+        "price": 44,
+        "desc": "A professionally designed, progressive 4-week training block delivered straight to your training app. I build the plan, you follow it at your own pace.",
+        "features": [
+          "4-week progressive strength + conditioning program",
+          "Video exercise demonstrations inside the app",
+          "Sets, reps, tempo, rest periods & training notes",
+          "Choice of gym-based OR home-based program",
+          "Renewed with a new block each month"
+        ],
+        "unit": "/month",
+        "link": "checkout.html?p=monthly-training-plan-self-guided",
+        "cover": "training",
+        "name": "Monthly Training Plan (Self-Guided)"
+      }
+    ],
+    "memberships": [
+      {
+        "price": 15,
+        "desc": "Nutrition Made Simple gives you the structure, guidance, and meal ideas you need to eat well consistently, without restriction, confusion, or starting over every Monday.",
+        "features": [
+          "Monthly High-Protein Recipes",
+          "7-Day High-Protein Plan (Starter Guide)",
+          "Accessible ingredients and easy recipes"
+        ],
+        "unit": "/month",
+        "tag": "Most popular",
+        "link": "membership.html",
+        "cover": "member",
+        "name": "Nutrition Made Simple"
+      },
+      {
+        "price": 95,
+        "desc": "Nutrition Made Simple gives you the structure, guidance, and meal ideas you need to eat well consistently, without restriction, confusion, or starting over every Monday.",
+        "features": [
+          "Monthly High-Protein Recipes",
+          "7-Day High-Protein Plan (Starter Guide)",
+          "Accessible ingredients & easy recipes",
+          "Saving 47%"
+        ],
+        "unit": "/year",
+        "tag": "Save 47%",
+        "link": "membership.html",
+        "cover": "member",
+        "name": "Nutrition Made Simple \u2014 Annual"
+      },
+      {
+        "name": "Nutrition Ongoing",
+        "price": 46,
+        "unit": "/week",
+        "cover": "member",
+        "link": "checkout.html?p=nutrition-ongoing",
+        "desc": "Ongoing nutrition coaching to keep you progressing after your program \u2014 accountability, adjustments and support, week to week.",
+        "features": [
+          "Continued nutrition coaching",
+          "Weekly accountability",
+          "Plan adjustments as you go"
         ]
       }
     ],
-    "products": [
+    "shop": [
       {
         "name": "Nutrition Basics Masterclass",
-        "price": 89,
+        "price": 90,
         "unit": "once",
-        "tag": "",
-        "desc": "The 3 core skills you need BEFORE starting any diet: nutritional IQ, skills & habits, and mindful eating.",
+        "category": "Masterclasses & Seminars",
+        "cover": "guide",
+        "desc": "The 3 Core Skills You Need BEFORE Starting Any Diet in 2026 If you\u2019ve ever said: \u201cThis diet isn\u2019t working for me,\u201d \u201cI\u2019m doing everything right, but nothing changes,\u201d or \u201cI just can\u2019t stay consistent,\u201d \u2026it\u2019s not the diet. It\u2019s the missing foundational skills. This masterclass teaches you the 3 things that determine whether ANY diet works long-term , regardless of whether you fol",
+        "link": "checkout.html?p=nutrition-basics-masterclass",
         "features": [
-          "Self-paced masterclass",
-          "Evidence-based",
-          "Lifetime access"
+          "Instant digital download",
+          "Lifetime access",
+          "By a Bachelor-qualified Nutritionist"
         ],
-        "image": "assets/img/offer-masterclass.png"
+        "image": ""
+      },
+      {
+        "name": "12 Week Booty Building Guide",
+        "price": 60,
+        "unit": "once",
+        "category": "Workout Guides",
+        "cover": "guide",
+        "desc": "This 12 week guide contains three phases of exercises that not only help you build and strengthen your entire lower body, but also provide shape and tone for a beautiful booty! Also included in purchase: - Weekly progress sheet to keep yourself accountable & track how heavy you are lifting - Nutrition hints & tips to support your training - Access to the Move Inspiring Change o",
+        "link": "checkout.html?p=12-week-booty-building-guide",
+        "features": [
+          "Instant digital download",
+          "Lifetime access",
+          "By a Bachelor-qualified Nutritionist"
+        ]
+      },
+      {
+        "name": "Hot Girl Summer Meal Plan",
+        "price": 90,
+        "unit": "once",
+        "category": "Nutritional Plans",
+        "cover": "guide",
+        "desc": "This comprehensive meal plan is designed for individuals aiming to achieve their weight loss goals while engaging in a rigorous training routine of 4 to 5 sessions per week. With a focus on a balanced macronutrient distribution, this plan is tailored to provide a higher carbohydrate intake, complemented by moderate protein and fat consumption. Its calorie range of 1600 to 1900 ",
+        "link": "checkout.html?p=hot-girl-summer-meal-plan",
+        "features": [
+          "Instant digital download",
+          "Lifetime access",
+          "By a Bachelor-qualified Nutritionist"
+        ]
+      },
+      {
+        "name": "The Strong Reset Method - Live Online Seminar",
+        "price": 48,
+        "unit": "once",
+        "category": "Masterclasses & Seminars",
+        "cover": "guide",
+        "desc": "I've been quietly working on something\u2026 and it actually works. It\u2019s fully evidence-based, built from the knowledge I\u2019ve gained through my Bachelor\u2019s degree in Nutrition, and tested on real women who\u2019ve seen real results. After years of coaching, studying, and trying to figure out why so many women still struggle, I\u2019ve created a method that brings it all together. \ud83d\udd25 Introducing:",
+        "link": "checkout.html?p=the-strong-reset-method-live-online-seminar",
+        "features": [
+          "Instant digital download",
+          "Lifetime access",
+          "By a Bachelor-qualified Nutritionist"
+        ]
+      },
+      {
+        "name": "Holiday Survival Guide 2024",
+        "price": 50,
+        "unit": "once",
+        "category": "Nutritional Plans",
+        "cover": "guide",
+        "desc": "\ud83c\udf84 Holiday Survival Guide 2024 \ud83c\udf84 The holidays are here, and so is your ultimate toolkit to thrive through the season! The Holiday Survival Guide 2024 is packed with everything you need to stay active, balanced, and stress-free, without sacrificing the joy of celebration. \ud83d\udcaa What\u2019s Inside: \u2705 A 3-day workout plan designed for home or gym, tailored for all fitness levels. \u2705 The 10K ",
+        "link": "checkout.html?p=holiday-survival-guide-2024",
+        "features": [
+          "Instant digital download",
+          "Lifetime access",
+          "By a Bachelor-qualified Nutritionist"
+        ]
       }
+    ],
+    "apparel": [
+      {
+        "name": "MIC Signature Hoodie",
+        "price": 79,
+        "unit": "",
+        "cover": "apparel",
+        "tag": "Coming soon",
+        "desc": "Premium heavyweight hoodie in forest green with the Move Inspiring Change wordmark.",
+        "features": [
+          "Heavyweight cotton",
+          "Forest green / sand",
+          "Unisex fit"
+        ],
+        "link": "contact.html"
+      },
+      {
+        "name": "MIC Training Tee",
+        "price": 42,
+        "unit": "",
+        "cover": "apparel",
+        "tag": "Coming soon",
+        "desc": "Soft, breathable training tee for the gym or everyday.",
+        "features": [
+          "Breathable cotton-blend",
+          "Subtle embroidered mark",
+          "Sizes XS\u2013XXL"
+        ],
+        "link": "contact.html"
+      },
+      {
+        "name": "MIC Tote & Bottle Bundle",
+        "price": 49,
+        "unit": "",
+        "cover": "apparel",
+        "tag": "Coming soon",
+        "desc": "Canvas tote + insulated drink bottle \u2014 your meal-prep companions.",
+        "features": [
+          "Canvas tote",
+          "750ml insulated bottle",
+          "Brand bundle"
+        ],
+        "link": "contact.html"
+      }
+    ],
+    "archived": [
+      "14-Day Online Reboot Program",
+      "12-Week Full Booty (Gym-Based) Program",
+      "8-Week Strength Program",
+      "10-Week Strength Block (Online)"
     ]
   }
 };

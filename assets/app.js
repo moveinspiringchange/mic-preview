@@ -85,25 +85,54 @@
   }
   const feat = $('#featuredRecipes'); if (feat) { feat.innerHTML = D.recipes.slice(0, 3).map((r, i) => card(r, i)).join(''); bind(feat); }
 
-  /* ---------- catalog (programs) ---------- */
+  /* ---------- designed offer cover + detail modal ---------- */
+  const COVER = { flagship: ['linear-gradient(135deg,var(--green-deep),var(--green))', '🏆'], consult: ['linear-gradient(135deg,var(--green),var(--sage))', '💬'],
+    training: ['linear-gradient(135deg,#2a6f4d,#4b916d)', '🏋️'], member: ['linear-gradient(135deg,var(--accent),var(--gold))', '🌿'],
+    guide: ['linear-gradient(135deg,#1f5c43,#8aa07e)', '📘'], apparel: ['linear-gradient(135deg,#36443b,#6b7a63)', '👕'] };
+  function cover(o) { const c = COVER[o.cover] || COVER.guide; return `<div class="pcover" style="background:${c[0]}"><span class="pcover-ic">${c[1]}</span><span class="pcover-t">${o.name}</span>${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>`; }
+  function pr(o) { return typeof o.price === 'number' ? `$${o.price}` : o.price; }
+  function offerModal(o) {
+    if (!o) return; let m = $('#offerModal'); if (!m) { m = document.createElement('div'); m.id = 'offerModal'; m.className = 'modal'; document.body.appendChild(m); }
+    const top = o.image ? `<div class="pcover" style="padding:0;overflow:hidden"><img src="${o.image}" style="width:100%;height:100%;object-fit:cover" alt=""></div>` : cover(o);
+    m.innerHTML = `<div class="modal-box"><div style="position:relative">${top}<button class="modal-x" style="position:absolute;top:14px;right:14px;z-index:3">✕</button></div>
+      <div class="modal-body"><h2>${o.name}</h2><div class="price" style="margin:6px 0">${pr(o)}<small> ${o.unit || ''}</small></div>
+      <p class="lead" style="font-size:1rem">${o.desc || ''}</p>
+      ${(o.features || []).length ? `<h4 style="margin-top:18px">What's included</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:8px">${o.features.map(f => `<li style="display:flex;gap:10px"><span style="color:var(--green);font-weight:800">✓</span>${f}</li>`).join('')}</ul>` : ''}
+      <a class="btn btn-primary" style="margin-top:22px" href="${o.link || LINK(o.name)}">Get started →</a></div></div>`;
+    m.classList.add('open'); m.querySelector('.modal-x').onclick = () => m.classList.remove('open'); m.onclick = e => { if (e.target === m) m.classList.remove('open'); };
+  }
+  function wireDetails(root) {
+    $$('[data-detail]', root).forEach(b => b.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); const c = b.closest('[data-grp]'); offerModal((D.catalog[c.dataset.grp] || [])[+c.dataset.idx]); }));
+    $$('.scard', root).forEach(c => c.addEventListener('click', e => { if (e.target.closest('a')) return; offerModal((D.catalog[c.dataset.grp] || [])[+c.dataset.idx]); }));
+  }
+  function pcard(o, i, grp) {
+    const f = (o.tag === 'Most popular' || o.tag === 'Flagship'); const feats = o.features || [];
+    return `<div class="pcard ${f ? 'feat' : ''}" data-grp="${grp}" data-idx="${i}">${o.tag ? `<span class="ribbon">${o.tag}</span>` : ''}<h3>${o.name}</h3>
+      <div class="price">${pr(o)}<small> ${o.unit || ''}</small></div><p class="desc">${o.desc || ''}</p>
+      <ul>${feats.slice(0, 5).map(x => `<li>${x}</li>`).join('')}${feats.length > 5 ? `<li style="list-style:none;color:var(--muted)">+ ${feats.length - 5} more…</li>` : ''}</ul>
+      <div style="display:flex;gap:10px;margin-top:auto"><a class="btn btn-primary btn-sm" href="${o.link || LINK(o.name)}">Get started</a><button class="btn btn-ghost btn-sm" data-detail>Details</button></div></div>`;
+  }
+  function shopCard(o, i, grp) {
+    const top = o.image ? `<div class="pcover" style="padding:0;overflow:hidden"><img src="${o.image}" style="width:100%;height:100%;object-fit:cover" alt="${o.name}">${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>` : cover(o);
+    return `<div class="scard" data-grp="${grp}" data-idx="${i}">${top}<div class="scard-b"><h3>${o.name}</h3><p class="desc">${o.desc ? o.desc.slice(0, 92) + '…' : ''}</p><div class="scard-f"><span class="price" style="font-size:1.35rem">${pr(o)}</span><button class="btn btn-primary btn-sm" data-detail>View</button></div></div></div>`;
+  }
   const cat = $('#catalog');
   if (cat) {
-    const groups = [['programs', 'Signature Programs', 'Transformations with structure, accountability and real coaching.'],
-      ['subscriptions', 'Memberships & Subscriptions', 'Ongoing recipes, training and support — cancel anytime.'],
-      ['services', 'Coaching & Consultations', '1:1 with a Bachelor-qualified nutritionist.'],
-      ['products', 'Shop', 'One-off guides and masterclasses.']];
-    cat.innerHTML = groups.map(([k, h, p]) => {
-      const items = D.catalog[k] || []; if (!items.length) return '';
-      return `<div class="cat-group"><h2>${h}</h2><p>${p}</p><div class="price-grid">${items.map(pcard).join('')}</div></div>`;
-    }).join('');
+    const groups = [['programs', 'Signature Programs & Training', 'Transformations and training with real structure and coaching.'],
+      ['coaching', '1:1 Coaching & Consultations', 'Work directly with a Bachelor-qualified nutritionist.'],
+      ['memberships', 'Memberships & Subscriptions', 'Ongoing recipes, training and support — cancel anytime.']];
+    cat.innerHTML = groups.map(([k, h, p]) => { const items = D.catalog[k] || []; if (!items.length) return '';
+      return `<div class="cat-group"><h2>${h}</h2><p>${p}</p><div class="price-grid">${items.map((o, i) => pcard(o, i, k)).join('')}</div></div>`; }).join('')
+      + ((D.catalog.archived || []).length ? `<div class="cat-group"><h2>Online Programs</h2><p>Returning soon — register your interest.</p><div class="archived-row">${D.catalog.archived.map(n => `<span class="arch">${n}</span>`).join('')}</div></div>` : '');
+    wireDetails(cat);
   }
-  function pcard(o) {
-    const featu = (o.tag === 'Most popular' || o.tag === 'Flagship');
-    const price = typeof o.price === 'number' ? `$${o.price}` : o.price;
-    return `<div class="pcard ${featu ? 'feat' : ''}">${o.tag ? `<span class="ribbon">${o.tag}</span>` : ''}<h3>${o.name}</h3>
-      <div class="price">${price}<small> ${o.unit || ''}</small></div><p class="desc">${o.desc || ''}</p>
-      <ul>${(o.features || []).map(f => `<li>${f}</li>`).join('')}</ul>
-      <a class="btn btn-primary" href="${LINK(o.name)}">Get started</a></div>`;
+  const shopEl = $('#shop');
+  if (shopEl) {
+    const cats = {}; (D.catalog.shop || []).forEach(p => { (cats[p.category] = cats[p.category] || []).push(p); });
+    let h = ''; const idxOf = {};
+    Object.entries(cats).forEach(([c, items]) => { h += `<div class="cat-group"><h2>${c}</h2><div class="shop-grid">${items.map(o => { const gi = (D.catalog.shop || []).indexOf(o); return shopCard(o, gi, 'shop'); }).join('')}</div></div>`; });
+    h += `<div class="cat-group"><h2>MIC Apparel <span style="font-size:.66rem;color:var(--accent);vertical-align:super">NEW</span></h2><p>The Move Inspiring Change clothing line — first drop coming soon.</p><div class="shop-grid">${(D.catalog.apparel || []).map((o, i) => shopCard(o, i, 'apparel')).join('')}</div></div>`;
+    shopEl.innerHTML = h; wireDetails(shopEl);
   }
 
   /* ---------- checkout ---------- */
