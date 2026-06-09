@@ -340,3 +340,39 @@ textarea.fld{min-height:140px;resize:vertical}
 .pcover-cat{font-size:.66rem;letter-spacing:.06em;opacity:.85;margin-top:7px;text-transform:uppercase}
 .scard .pcover{aspect-ratio:4/3;margin:0}
 .band .ov{background:linear-gradient(180deg,rgba(53,42,39,.30),rgba(53,42,39,.68))}
+
+/* ============ v9: mobile / all-device hardening ============ */
+/* never allow sideways scroll; let long headings wrap instead of clipping */
+@media(max-width:760px){
+  html,body{overflow-x:hidden;max-width:100%}
+  h1,h2,h3{overflow-wrap:break-word}
+  /* declutter the top bar — the burger menu carries navigation */
+  .nav-inner{gap:12px}
+  .nav-cta .btn{display:none}
+  .nav-login{font-size:.86rem}
+  .brand .logo-move{font-size:1.28rem}
+}
+@media(max-width:600px){
+  /* tame the full-height hero so content is reachable sooner */
+  .band[style*="92vh"]{min-height:72vh!important}
+  .band h1{font-size:clamp(1.95rem,7.4vw,2.55rem)!important}
+  .band p{font-size:1.02rem!important}
+  /* full-width, easy-tap hero buttons */
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .cta-band .btn{width:100%;justify-content:center}
+}
+/* dashboard: compact wrapping pill nav instead of a tall stacked block */
+@media(max-width:920px){
+  .dash-side{padding:14px 14px 16px}
+  .dash-side .brand{margin-bottom:12px}
+  .dnav{gap:8px;align-content:flex-start}
+  .dnav button{width:auto;flex:0 0 auto;padding:.5em .85em}
+  .dnav small{flex-basis:100%;width:100%;margin:8px 2px 0}
+  .dnav .sep{flex-basis:100%;width:100%;height:0;background:none;border-top:1px solid rgba(255,255,255,.14);margin:8px 0 0}
+}
+@media(max-width:600px){
+  .dash-main{padding:20px 16px}
+  .dash-top{gap:12px}
+  .dash-top h1{font-size:1.5rem}
+}

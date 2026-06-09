@@ -145,8 +145,9 @@
   const co = $('#checkout');
   if (co) {
     const p = new URLSearchParams(location.search).get('p') || '';
-    const item = allOffers().find(o => slug(o.name) === p) || allOffers()[0] || { name: 'Your order', price: 0, unit: '' };
-    const price = typeof item.price === 'number' ? `$${item.price}.00` : item.price;
+    const priced = allOffers().filter(o => o && o.name && (typeof o.price === 'number' || o.price));
+    const item = (p && priced.find(o => slug(o.name) === p)) || priced.find(o => typeof o.price === 'number') || priced[0] || { name: 'Your selection', price: 0 };
+    const price = typeof item.price === 'number' ? `$${item.price}.00` : (item.price || 'Free');
     co.innerHTML = `<div class="shead"><span class="eyebrow">Secure checkout</span><h2>You're almost in 🌿</h2></div>
       <div style="display:grid;grid-template-columns:1.2fr .9fr;gap:34px;align-items:start" class="checkout-grid">
         <div class="panel"><h3>Your details</h3>
