@@ -15,8 +15,8 @@
   const allOffers = () => Object.values(D.catalog || {}).flat();
 
   /* ---------- shared chrome (nav + footer) ---------- */
-  const NAVLINKS = [['index.html', 'Home'], ['about.html', 'About'], ['recipes.html', 'Recipes'],
-    ['programs.html', 'Programs'], ['public-health.html', 'Public Health'], ['shop.html', 'Shop'], ['contact.html', 'Contact']];
+  const NAVLINKS = [['about.html', 'About'], ['recipes.html', 'Recipes'], ['programs.html', 'Programs'],
+    ['public-health.html', 'Public Health'], ['shop.html', 'Shop'], ['contact.html', 'Contact']];
   function injectChrome() {
     if (document.body.dataset.chrome !== 'site') return;
     const active = document.body.dataset.page || '';
@@ -26,7 +26,7 @@
       <header class="nav"><div class="wrap nav-inner">
         <a class="brand" href="index.html"><span class="mark">M</span> Move Inspiring Change</a>
         <nav class="nav-links">${links}</nav>
-        <div class="nav-cta"><a class="btn btn-ghost btn-sm" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
+        <div class="nav-cta"><a class="nav-login" href="login.html">Member Login</a><a class="btn btn-primary btn-sm" href="programs.html">Work with me</a></div>
         <button class="burger" aria-label="Menu">☰</button>
       </div></header>`);
     document.body.insertAdjacentHTML('beforeend',
