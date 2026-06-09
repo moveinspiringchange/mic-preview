@@ -207,6 +207,155 @@ window.MIC_DATA = {
       ]
     }
   ],
+  "blog": [
+    {
+      "title": "PART TWO of lifestyle, nutrition and training",
+      "excerpt": "Lifestyle choices can be the biggest offender and can cause constant set backs. This, coupled with poor nutrition choices, leads to...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/beach.jpg"
+    },
+    {
+      "title": "PART 1 of Lifestyle, nutrition and Training",
+      "excerpt": "When it comes to fat loss a lot of people emphasis on the things that will provide a quick fix, instead of long-term solution. For a...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-sitting.jpg"
+    },
+    {
+      "title": "Hip Thrust",
+      "excerpt": "How to do a hip thrust and feel it in your glutes? The most common mistake in a hip thrust is the feet positioning. The placement of your...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-1.jpg"
+    },
+    {
+      "title": "Split squat struggles are real.",
+      "excerpt": "Do you struggle setting yourself set up for a split squat? I got you covered with some tips to help you out! \ud83d\ude09 #splitsquats #dosanddonts...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-prawn-chilli-garlic-linguine.png"
+    },
+    {
+      "title": "This May. Get Fit",
+      "excerpt": "Kicks off one week from today. Come take a look and see what we are all about. For more info DM us. Are you ready? #moveinspiringchange...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-portrait.jpg"
+    },
+    {
+      "title": "Your weekly reminder:",
+      "excerpt": "Yep, it's true. 99% of females have cellulite. #c ellulite #normal #weeklyreminder",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-best-broccoli-salad.jpg"
+    },
+    {
+      "title": "10 Important Things You Need To Take Seriously When Starting Your Fitness Journey:",
+      "excerpt": "1\ufe0f\u20e3 Be patient. I cannot stress this enough. 2\ufe0f\u20e3 Create habits. Habits are key key \ud83d\udd11 3\ufe0f\u20e3 Consistency. I'm always talking about it. Be...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-2.jpg"
+    },
+    {
+      "title": "Training vs. Exercising",
+      "excerpt": "Lets talk about the difference between training and exercising? Both have two different outcomes. Exercise is a physical activity...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/beach.jpg"
+    },
+    {
+      "title": "The Deadlift Queen 2021",
+      "excerpt": "The deadlift Queen 2021 goes to @emmabrookriley - Deadlifting 2.5x her body weight at 122.5kg! She might be tiny but she is strong AF! So...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-sitting.jpg"
+    },
+    {
+      "title": "Dumbbell Romanian deadlift",
+      "excerpt": "Let's talk about the DB RDL (Dumbbell Romanian deadlift). It can also be performed with a barbell and it's a great accessory movement to...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-1.jpg"
+    },
+    {
+      "title": "6 cues for a successful Sumo Deadlift!",
+      "excerpt": "1. Take your stance - The first thing to ensure prior to lifting the bar is our foot position. When setting up, have a look at where your...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-prawn-chilli-garlic-linguine.png"
+    },
+    {
+      "title": "What Tarryn had to say!",
+      "excerpt": "When you get clients like these you keep them forever! So proud of @tarryntourle smash goals and still killing it! \ud83d\udc4a\ud83d\udc95 This is what she...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-portrait.jpg"
+    },
+    {
+      "title": "Week 2: Sumo Deadlifts",
+      "excerpt": "Getting straight into week 2 with learning the basics of the Sumo Deadlift. \ud83e\udd2a\ud83c\udf51\ud83d\udc4c #moveinspiringchange #sumodeadlifts #strengthtraining...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-best-broccoli-salad.jpg"
+    },
+    {
+      "title": "2017-Now",
+      "excerpt": "2017 - Sick, stressed, in a toxic relationship, strict eating and obsessed with tracking my macros, scared to go over my calories, over...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-2.jpg"
+    },
+    {
+      "title": "My client Jess!",
+      "excerpt": "This babe is forever challenging me in ways I'm very grateful for! This is what she had to say about MIC. @jessica.baggins\ud83d\ude18 I started...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/beach.jpg"
+    },
+    {
+      "title": "Let's normalise a few things in today society!",
+      "excerpt": "1\ufe0f\u20e3 Everyone's body is unique and beautiful. 2\ufe0f\u20e3 Cellulite is normal to have - 99% of females have it, if you don't your one of the lucky...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-sitting.jpg"
+    },
+    {
+      "title": "Protein",
+      "excerpt": "Since we have spoken about carbs, I thought I would give you my take on protein intake because yet again there is a lot of misconception...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-1.jpg"
+    },
+    {
+      "title": "Fats",
+      "excerpt": "Since we have spoken about how carbs makes you fat & how eating protein makes you big and bulky, lets shift the focus to fats, & see what...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-prawn-chilli-garlic-linguine.png"
+    },
+    {
+      "title": "Carbs Do Not Make You Fat!",
+      "excerpt": "These days there is a lot controversial bullshit about carbs, Lets get this straight CARBS DO NOT MAKE YOU FAT! Yes that\u2019s right CARBS...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/rachel-portrait.jpg"
+    },
+    {
+      "title": "Weight loss Vs. Fat loss",
+      "excerpt": "Do you know the difference between to two? It\u2019s ok if you don\u2019t, most of us don\u2019t. So I\u2019m going to explain it, and my take on it. A lot...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/recipe-best-broccoli-salad.jpg"
+    },
+    {
+      "title": "About Me",
+      "excerpt": "I strive to offer all my clients the opportunity to reach their health and fitness goals. Whether it is reaching a new personal best,...",
+      "date": "",
+      "read": "1 min read",
+      "image": "assets/img/result-2.jpg"
+    }
+  ],
   "catalog": {
     "coaching": [
       {

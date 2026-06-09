@@ -15,7 +15,7 @@
   const allOffers = () => Object.values(D.catalog || {}).flat();
 
   /* ---------- shared chrome (nav + footer) ---------- */
-  const NAVLINKS = [['about.html', 'About'], ['recipes.html', 'Recipes'], ['programs.html', 'Programs'],
+  const NAVLINKS = [['about.html', 'About'], ['recipes.html', 'Recipes'], ['blog.html', 'Blog'], ['programs.html', 'Programs'],
     ['public-health.html', 'Public Health'], ['shop.html', 'Shop'], ['contact.html', 'Contact']];
   function injectChrome() {
     if (document.body.dataset.chrome !== 'site') return;
@@ -134,6 +134,12 @@
     h += `<div class="cat-group"><h2>MIC Apparel <span style="font-size:.66rem;color:var(--accent);vertical-align:super">NEW</span></h2><p>The Move Inspiring Change clothing line — first drop coming soon.</p><div class="shop-grid">${(D.catalog.apparel || []).map((o, i) => shopCard(o, i, 'apparel')).join('')}</div></div>`;
     shopEl.innerHTML = h; wireDetails(shopEl);
   }
+  /* ---------- blog page (all posts) ---------- */
+  const blogEl = $('#blog');
+  if (blogEl && D.blog) {
+    blogEl.innerHTML = D.blog.map((p, i) => `<article class="rcard" data-bi="${i}"><div class="ph">${p.image ? `<img src="${p.image}" alt="" loading="lazy">` : ''}</div><div class="body"><div class="rmeta"><span>📅 ${p.date || ''}</span><span>⏱ ${p.read || ''}</span></div><h3>${p.title}</h3><p class="blurb">${p.excerpt || ''}</p></div></article>`).join('');
+    $$('.rcard', blogEl).forEach(el => el.addEventListener('click', () => { const p = D.blog[+el.dataset.bi]; let m = $('#blogModal'); if (!m) { m = document.createElement('div'); m.id = 'blogModal'; m.className = 'modal'; document.body.appendChild(m); } m.innerHTML = `<div class="modal-box"><div class="modal-hero"><img src="${p.image}"><button class="modal-x">✕</button></div><div class="modal-body"><div class="rmeta"><span>📅 ${p.date || ''}</span><span>⏱ ${p.read || ''}</span></div><h2>${p.title}</h2><p class="lead" style="font-size:1rem;margin-top:10px">${p.excerpt || ''}</p><p style="color:var(--muted);margin-top:14px">The full article is published on the live Wix blog.</p></div></div>`; m.classList.add('open'); m.querySelector('.modal-x').onclick = () => m.classList.remove('open'); m.onclick = e => { if (e.target === m) m.classList.remove('open'); }; }));
+  }
 
   /* ---------- checkout ---------- */
   const co = $('#checkout');
@@ -146,7 +152,7 @@
         <div class="panel"><h3>Your details</h3>
           <div style="display:grid;gap:12px;margin-top:14px">
             <input class="fld" placeholder="Full name"><input class="fld" placeholder="Email address">
-            <input class="fld" placeholder="Phone"><input class="fld" placeholder="Card number"><div style="display:flex;gap:12px"><input class="fld" placeholder="MM / YY"><input class="fld" placeholder="CVC"></div></div>
+            <input class="fld" placeholder="Phone"><input class="fld" placeholder="Promo code (e.g. CONSULT89)"><input class="fld" placeholder="Card number"><div style="display:flex;gap:12px"><input class="fld" placeholder="MM / YY"><input class="fld" placeholder="CVC"></div></div>
           <button class="btn btn-primary" style="margin-top:18px;width:100%" id="payBtn">Pay ${price} securely</button>
           <p style="font-size:.8rem;color:var(--muted);text-align:center;margin-top:10px">🔒 Demo checkout · in the live site this is secure Wix Payments</p></div>
         <div class="panel" style="background:var(--green-deep);color:#fff"><h3 style="color:#fff">Order summary</h3>
