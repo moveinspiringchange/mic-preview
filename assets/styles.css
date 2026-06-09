@@ -166,7 +166,7 @@ section{padding:84px 0}
 .dnav button.active{background:var(--accent);color:#fff}
 .dnav .ico{font-size:1.1rem}
 .dnav .sep{height:1px;background:rgba(255,255,255,.12);margin:14px 6px}
-.dnav small{padding:0 1em;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8fae8f;margin:6px 0}
+.dnav small{padding:0 1em;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#cBa99c;margin:6px 0}
 .dash-main{padding:34px 40px}
 .dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
 .dash-top h1{font-size:2rem}
@@ -200,6 +200,7 @@ footer .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-si
   .modal-cols{grid-template-columns:1fr}
   .nav-links{display:none}
   .nav-cta{margin-left:auto}
+  .nav-cta .btn{display:none}
   .burger{display:block}
 }
 @media(max-width:600px){
@@ -235,8 +236,9 @@ footer .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-si
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .band .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,79,61,.35),rgba(13,79,61,.72))}
 .band .wrap{position:relative;z-index:2}
-.band h2{color:#fff;font-size:clamp(2rem,4vw,3rem);max-width:18ch;margin:0 auto}
-.band p{color:#e7efe6;max-width:44ch;margin:16px auto 26px}
+.band h1,.band h2{color:#fff;font-size:clamp(2rem,4vw,3rem);max-width:18ch;margin:0 auto;text-shadow:0 2px 24px rgba(22,14,10,.55)}
+.band p{color:#f4eee9;max-width:44ch;margin:16px auto 26px;text-shadow:0 1px 12px rgba(22,14,10,.5)}
+.band .eyebrow{text-shadow:0 2px 14px rgba(22,14,10,.6)}
 
 /* dashboard views */
 .dview{display:none}

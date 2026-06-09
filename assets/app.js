@@ -121,8 +121,11 @@
       <div style="display:flex;gap:10px;margin-top:auto"><a class="btn btn-primary btn-sm" href="${o.link || LINK(o.name)}">Get started</a><button class="btn btn-ghost btn-sm" data-detail>Details</button></div></div>`;
   }
   function shopCard(o, i, grp) {
-    const top = o.image ? `<div class="pcover" style="padding:0;overflow:hidden"><img src="${o.image}" style="width:100%;height:100%;object-fit:cover" alt="${o.name}">${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>` : cover(o);
-    return `<div class="scard" data-grp="${grp}" data-idx="${i}">${top}<div class="scard-b"><h3>${o.name}</h3><p class="desc">${o.desc ? o.desc.slice(0, 92) + '…' : ''}</p><div class="scard-f"><span class="price" style="font-size:1.35rem">${pr(o)}</span><button class="btn btn-primary btn-sm" data-detail>View</button></div></div></div>`;
+    const hasImg = !!o.image;
+    const top = hasImg ? `<div class="pcover" style="padding:0;overflow:hidden"><img src="${o.image}" style="width:100%;height:100%;object-fit:cover" alt="${o.name}">${o.tag ? `<span class="pcover-tag">${o.tag}</span>` : ''}</div>` : cover(o);
+    const title = hasImg ? `<h3>${o.name}</h3>` : ''; /* designed cover already shows the title — avoid duplicating it */
+    const d = o.desc || ''; const desc = d.length > 96 ? d.slice(0, 96).trim() + '…' : d;
+    return `<div class="scard" data-grp="${grp}" data-idx="${i}">${top}<div class="scard-b">${title}<p class="desc">${desc}</p><div class="scard-f"><span class="price" style="font-size:1.35rem">${pr(o)}</span><button class="btn btn-primary btn-sm" data-detail>View</button></div></div></div>`;
   }
   const cat = $('#catalog');
   if (cat) {
@@ -156,7 +159,7 @@
     const priced = allOffers().filter(o => o && o.name && (typeof o.price === 'number' || o.price));
     const item = (p && priced.find(o => slug(o.name) === p)) || priced.find(o => typeof o.price === 'number') || priced[0] || { name: 'Your selection', price: 0 };
     const price = typeof item.price === 'number' ? `$${item.price}.00` : (item.price || 'Free');
-    co.innerHTML = `<div class="shead"><span class="eyebrow">Secure checkout</span><h2>You're almost in 🌿</h2></div>
+    co.innerHTML = `<div class="shead"><span class="eyebrow">Secure checkout</span><h2>You're almost in</h2></div>
       <div style="display:grid;grid-template-columns:1.2fr .9fr;gap:34px;align-items:start" class="checkout-grid">
         <div class="panel"><h3>Your details</h3>
           <div style="display:grid;gap:12px;margin-top:14px">
