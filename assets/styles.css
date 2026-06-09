@@ -274,3 +274,17 @@ footer .copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-si
 
 @media(max-width:920px){.about{grid-template-columns:1fr}.results-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.results-grid{grid-template-columns:1fr}.stat-row{gap:20px}}
+
+/* forms / checkout / pages */
+.fld{border:1px solid var(--line);border-radius:12px;padding:.85em 1.1em;font-family:var(--sans);font-size:.95rem;background:#fff;width:100%}
+.fld:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--sage-soft)}
+textarea.fld{min-height:140px;resize:vertical}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow-sm)}
+.page-head{padding:70px 0 18px}
+.page-head.center{text-align:center}
+.client-logos{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center}
+.client-logos .cl{font-family:var(--serif);font-weight:600;color:var(--green-deep);font-size:1.05rem;padding:16px 24px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm)}
+.checklist-2{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.checklist-2 li{display:flex;gap:10px;font-size:.96rem}
+.checklist-2 li:before{content:"✓";color:var(--green);font-weight:800}
+@media(max-width:760px){.checkout-grid{grid-template-columns:1fr!important}.checklist-2{grid-template-columns:1fr}}
