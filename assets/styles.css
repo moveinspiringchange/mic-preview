@@ -415,6 +415,9 @@ html,body{overflow-x:clip}
   .dash-top h1{font-size:1.5rem}
   .dash-top .avatar{display:none}
 }
+/* two-package pricing (The Strong Method split) */
+.price-grid-2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px;margin:0 auto}
+@media(max-width:760px){.price-grid-2{grid-template-columns:1fr;max-width:520px}}
 /* friendlier trust strip on phones (2×2 grid, not a left-packed row) */
 @media(max-width:600px){
   .trust .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;justify-content:initial;padding:20px 18px}

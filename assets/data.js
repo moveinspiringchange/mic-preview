@@ -360,7 +360,7 @@ window.MIC_DATA = {
     "coaching": [
       {
         "price": 181,
-        "desc": "A structured, evidence-based nutrition consultation designed to help you understand your body, your habits, and how to fuel yourself confidently, without restriction or confusion.",
+        "desc": "A structured, evidence-based nutrition consultation designed to help you understand your body, your habits, and how to fuel yourself confidently, without restriction or confusion. Personalised meal plans are available as an optional add-on for an extra $159.",
         "features": [
           "Comprehensive Nutrition Assessment",
           "Review of intake, lifestyle & goals",
@@ -369,7 +369,8 @@ window.MIC_DATA = {
           "Take-home resources & food journal",
           "60-minute consultation",
           "Bachelor-qualified Nutritionist",
-          "Evidence-based approach"
+          "Evidence-based approach",
+          "Optional add-on: personalised meal plan +$159"
         ],
         "unit": "one-off",
         "tag": "Start here",
@@ -412,20 +413,37 @@ window.MIC_DATA = {
     ],
     "programs": [
       {
-        "name": "The Strong Method\u2122",
-        "price": "From 199",
-        "unit": "/month",
-        "tag": "Flagship",
+        "name": "The Strong Method\u2122 \u2014 Nutrition Only",
+        "price": 64,
+        "unit": "/week",
         "cover": "flagship",
         "link": "the-strong-method.html",
-        "desc": "A 6\u20139 month transformation for women 35\u201360 \u2014 nutrition, strength and habit mastery, with weekly check-ins. The last \u201cdiet\u201d you'll ever need.",
+        "desc": "The 6\u20139 month transformation, nutrition side \u2014 perfect if you want to lose up to 1kg a week whilst improving your energy, with weekly coaching support.",
         "features": [
-          "Personal onboarding questionnaire",
-          "A 4-week custom program built for you",
+          "1 new, easy-to-follow meal plan each week",
           "Weekly check-ins with Rachel",
-          "Nutrition + strength + habit coaching",
-          "Home or gym-based",
-          "Member dashboard & community"
+          "Daily habit tracking & journaling",
+          "Unlimited email support with Rachel",
+          "Private members community",
+          "6\u20139 month transformation"
+        ]
+      },
+      {
+        "name": "The Strong Method\u2122 \u2014 Training & Nutrition",
+        "price": 79,
+        "unit": "/week",
+        "tag": "Most popular",
+        "cover": "flagship",
+        "link": "the-strong-method.html",
+        "desc": "The full 6\u20139 month transformation \u2014 best if you want to lose weight, gain muscle and increase bone density. Everything in Nutrition Only, plus your custom training program.",
+        "features": [
+          "Weekly custom training program \u2014 gym or home",
+          "1 new, easy-to-follow meal plan each week",
+          "Weekly check-ins with Rachel",
+          "Daily habit tracking & journaling",
+          "Unlimited email support with Rachel",
+          "Private members community",
+          "6\u20139 month transformation"
         ]
       },
       {
